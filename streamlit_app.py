@@ -6,6 +6,11 @@ import nltk
 from nltk.stem.porter import PorterStemmer
 
 try:
+    nltk.data.find('tokenizers/punkt_tab')
+except LookupError:
+    nltk.download('punkt_tab')
+
+try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
     nltk.download('punkt')
